@@ -1,5 +1,10 @@
 import React from "react";
+import Navigate from "../components/navigation";
 
 export default function myproject() {
-  return <div>프로젝트</div>;
+  return (
+    <div>
+      <Navigate />
+    </div>
+  );
 }

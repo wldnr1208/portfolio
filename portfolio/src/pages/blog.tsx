@@ -1,5 +1,10 @@
 import React from "react";
+import Navigate from "../components/navigation";
 
 export default function blog() {
-  return <div>블로그</div>;
+  return (
+    <div>
+      <Navigate />
+    </div>
+  );
 }
