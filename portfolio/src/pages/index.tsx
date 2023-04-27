@@ -85,7 +85,7 @@ const Home = () => {
 export default Home;
 
 const TiltWrapper = styled.div`
-  background-color: #373531; // 원하는 색상 코드로 변경하세요 (예: #f5f5f5)
+  background-color: #1d1d1d; // 원하는 색상 코드로 변경하세요 (예: #f5f5f5)
   background-image: url(${backgroundImg.src});
   background-position: center;
   background-repeat: no-repeat;
