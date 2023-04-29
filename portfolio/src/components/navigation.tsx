@@ -19,7 +19,7 @@ const Navigation = () => {
           <NavLink href="/myproject">Projects</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink href="/blog">Blog</NavLink>
+          <NavLink href="/contact">Contact</NavLink>
         </NavItem>
       </NavList>
     </NavWrapper>
