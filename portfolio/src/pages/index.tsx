@@ -36,12 +36,6 @@ const Home = () => {
         changeColor();
       }, []);
 
-      const randomTranslate = () => {
-        const x = Math.random() * 20 - 10;
-        const y = Math.random() * 20 - 10;
-        return `translateX(${x}px) translateY(${y}px)`;
-      };
-
       const handleMouseEnter = () => {
         setHue(Math.random() * 360);
       };

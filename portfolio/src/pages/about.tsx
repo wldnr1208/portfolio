@@ -4,6 +4,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // Carousel CSS
 import styled, { keyframes } from "styled-components";
 import { useTransition, animated } from "react-spring";
 import { CSSProperties } from "react";
+import LargeTitle from "../components/LargeTitle";
 
 const About: React.FC = () => {
   const [showKeywords1, setShowKeywords1] = useState<string[]>([]);
@@ -61,6 +62,7 @@ const About: React.FC = () => {
               showStatus={false}
               emulateTouch
               showArrows={false} // 화살표를 숨깁니다.
+              swipeScrollTolerance={0} // 슬라이드 겹침 문제를 해결하기 위해 추가된 코드
               renderIndicator={(onClickHandler, isSelected, index, label) => (
                 <PagingDot
                   onClick={onClickHandler}
@@ -71,8 +73,9 @@ const About: React.FC = () => {
               )}
             >
               <Slide>
+                <LargeTitle>Myself & I</LargeTitle>
                 <SlideContent>
-                  <h3>About me</h3>
+                  <h2>About me</h2>
                   <p>
                     Trying to take on new challenges every day as a junior
                     front-end developer. <br></br> I majored in radio
@@ -84,7 +87,7 @@ const About: React.FC = () => {
               </Slide>
               <Slide>
                 <SlideContent>
-                  <h3>Education, certificates</h3>
+                  <h2>Education, certificates</h2>
                   <p>
                     Bachelor of Science in Radio Engineering, Kunsan University
                     National Certificate - Broadcasting and Communications
@@ -96,7 +99,7 @@ const About: React.FC = () => {
               </Slide>
               <Slide>
                 <SlideContent>
-                  <h3>My hobbies</h3>
+                  <h2>My hobbies</h2>
                   <p>
                     What I am most interested in now is developing the web with
                     various frameworks.so TypeScript and Next among several
@@ -140,16 +143,18 @@ const Slide = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: calc(100% - 50px); // 50px 만큼의 간격을 유지합니다.
+  height: calc(100% - 50px);
   overflow-y: scroll;
-  padding-bottom: 50px; // 페이지 도트와의 간격을 유지하기 위해 패딩을 추가합니다.
 
   // 스크롤 바를 숨깁니다.
   ::-webkit-scrollbar {
     display: none;
   }
-  -ms-overflow-style: none; // Internet Explorer 및 Edge를 대응합니다.
-  scrollbar-width: none; // Firefox를 대응합니다.
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  // 슬라이드 간의 여백 조정
+  margin-bottom: 15%;
 `;
 
 const PagingDot = styled.button`
@@ -196,29 +201,34 @@ const CarouselWrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
+  height: 80%; // 높이를 조절
   margin-right: 60px; // 오른쪽 여백 조절
   min-width: 500px;
 `;
 
 const SlideContent = styled.div`
-  max-height: 70%;
+  max-height: 100%;
   overflow-y: auto;
   margin-bottom: 2rem;
-  color: #ffffff; // 글자색 변경
-
-  h3 {
-    font-size: 24px; // 글자 크기 변경
-    line-height: 1.3; // 줄 간격 변경
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; // 세로 가운데 정렬
+  align-items: center; // 가로 가운데 정렬
+  margin-bottom h3 {
+    font-size: 28px;
+    line-height: 1.5;
   }
 `;
-
 const Keywords = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
+  margin-top: 60px; // 상단 여백 조절
+  margin-bottom: 60px; // 하단 여백 조절
   margin-left: 60px;
+  height: 200px; // 높이 조절
 `;
 
 const slideIn = keyframes`
@@ -233,12 +243,13 @@ const slideIn = keyframes`
 `;
 
 const Keyword = styled.span`
-  font-size: 30px;
+  font-size: 34px; // 글자 크기 변경
   font-weight: bold;
-  margin: 10px 0;
+  margin: 30px 0; // 상하 여백 조절
   color: #ffffff;
   animation: ${slideIn} 1s ease-in-out forwards;
   opacity: 0;
+  line-height: 2; // 줄 간격 조절
 `;
 
 const KeywordColumn = styled.div`
