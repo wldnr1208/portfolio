@@ -19,7 +19,7 @@ const mySkill = () => {
           <Content>
             <LargeTitle color="#47fcb0">My Skill</LargeTitle>
             <h3>
-              I'm a front-end junior developer who's been working on it for
+              I&apos;m a front-end junior developer who's been working on it for
               nearly half a year. I am studying web development using React.
               <br></br>I completed Navigation 99, an education at the Spartan
               Coding Club, and collaborated on projects with trainees studying

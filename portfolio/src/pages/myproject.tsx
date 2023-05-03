@@ -9,6 +9,7 @@ type Project = {
   description: string;
   technologies: Technology[];
   imageUrl: string;
+  visit: string;
 };
 
 const projects: Project[] = [
@@ -24,13 +25,14 @@ const projects: Project[] = [
     ],
     imageUrl:
       "https://lh3.googleusercontent.com/pw/AJFCJaXegzMx-W9qE_ys5eO0vJNrRYQXiKL4e_BBMCWT7oXGhiNhcH-MHWmLOksBr8D4FeBXPjhgq5dxmIbnIf-BTs_US8FHYYCnalijYBAZ4fkrRjvCDqBtvE-pvdzgLufQWKSuhdvVFAG1WKU_zv7uMSqdZ4uufa2esNqnOYH5jjktcRiNdSvOqqCkOiNqK0vadSWCXDV-VzR9Vzi9z1sP53tFx0Doc9sl_qKX1dO35Hv4VbPZOjqMKOZJeOKY_gATUslt31OXpO4Ncr9Htyf6_Y9n16yyI1TjWpaw9JoJOTL4kiFRp8eTVtNskLsdgl1Ao3X2fP1dXX0T3lBMiYqOoAgX0x0AiOBhnsff9MM9WYTikwMX8WIgBD1ueY_ZXQKKE1o6BnHMyn6u6z0W0-RIRe-MuPdHk_KJFf0pUYBTFlufqXRMau-NJQUfJxa4C03HFnD1_Dcqoix8jLk7KFPy7bzHLsvzwNrzVfNn9Ptdk07sulTYmin1xKxd9CoUt4Ej17N3ydMIAYk8io6iromFmyWDlpQMC4TcNl_6s0w5xmD0_xK0GPbza00MzmUh1dYqAZ_sKeIlbZbJ-xqXWD_Dt8wGks66a5FJLT4-qwsJKWtz1WXBlQN1z1QClznf0hZUA_uCDXcHWULClu5BobPLFRp6EX2E85bybeetZSY_PnbXm0fRGyBqdCULsmjPpxztGx1r7V177bPZO4l6AnneAnILfD6eFNXomODwH6ozV7QwEkC4izViMBg4Els1jfCenMrU0B1KRgjpq-fPKJzn2N22iKFEns7bCWg-u-i61BLE77UUaHwrlqnBZltAGFVDJs3-0v8I4BruyDS4VSJlUrDV4GlhIp066PLJW2eBLPiLclxTrPCDxcml8JAQbi6be5A_he0PjNs1leM-sa0kDC_8=w1010-h1010-s-no?authuser=0",
+    visit: "https://twogaether.site/",
   },
-  {
+  /*   {
     title: "Project 2",
     description: "Description of Project 2",
     technologies: ["Node.js", "Express", "MongoDB"],
     imageUrl: "https://via.placeholder.com/150",
-  },
+  }, */
   // ...add more projects
 ];
 
@@ -43,6 +45,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => (
     <Image src={project.imageUrl} alt={project.title} />
     <Title>{project.title}</Title>
     <Description>{project.description}</Description>
+    <a href={project.visit}>visit twogaether project</a>
     <Technologies>
       {project.technologies.map((technology) => (
         <Technology key={technology}>{technology}</Technology>

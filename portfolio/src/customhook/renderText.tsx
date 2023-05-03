@@ -27,7 +27,7 @@ const renderText = (text: string) => {
 
     useEffect(() => {
       changeColor();
-    }, []);
+    }, [changeColor]);
 
     const handleMouseEnter = () => {
       setHue(Math.random() * 360);
