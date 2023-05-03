@@ -19,9 +19,10 @@ const mySkill = () => {
           <Content>
             <LargeTitle color="#47fcb0">My Skill</LargeTitle>
             <h3>
-              I&apos;m a front-end junior developer who's been working on it for
-              nearly half a year. I am studying web development using React.
-              <br></br>I completed Navigation 99, an education at the Spartan
+              I&apos;m a front-end junior developer who&apos;s been working on
+              it for nearly half a year. I am studying web development using
+              React.
+              <br />I completed Navigation 99, an education at the Spartan
               Coding Club, and collaborated on projects with trainees studying
               back and development in the educational curriculum.
             </h3>
@@ -29,22 +30,32 @@ const mySkill = () => {
           <CubeWrapper>
             <Cube>
               <FrontFace>
-                React <br></br>JavaScript
+                React <br />
+                JavaScript
               </FrontFace>
               <BackFace>
-                Redux<br></br>Axios
+                Redux
+                <br />
+                Axios
               </BackFace>
               <LeftFace>
-                TypeScript <br></br>Node.js
+                TypeScript <br />
+                Node.js
               </LeftFace>
               <RightFace>
-                CSS<br></br>HTML
+                CSS
+                <br />
+                HTML
               </RightFace>
               <BottomFace>
-                Github<br></br>Figma
+                Github
+                <br />
+                Figma
               </BottomFace>
               <TopFace>
-                ChatGpt<br></br>OAuth2.0
+                ChatGpt
+                <br />
+                Bing image creator
               </TopFace>
             </Cube>
           </CubeWrapper>

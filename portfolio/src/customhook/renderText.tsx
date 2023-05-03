@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import ParallaxTilt from "react-parallax-tilt";
 import styled, { keyframes } from "styled-components";
 
@@ -18,12 +18,12 @@ const renderText = (text: string) => {
     const scale = 1 + Math.random() * 0.2; // 1 ~ 1.2 배 크기
     const [hue, setHue] = useState(Math.random() * 360); // 0 ~ 360도 색상
 
-    const changeColor = () => {
+    const changeColor = useCallback(() => {
       setTimeout(() => {
         setHue(Math.random() * 360);
         changeColor();
       }, 2000);
-    };
+    }, []);
 
     useEffect(() => {
       changeColor();
