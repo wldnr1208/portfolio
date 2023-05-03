@@ -11,8 +11,18 @@ const About: React.FC = () => {
   const [showKeywords2, setShowKeywords2] = useState<string[]>([]);
 
   useEffect(() => {
-    const keywordList1 = ["React", "JavaScript", "TypeScript", "Next.js"];
-    const keywordList2 = ["HTML", "CSS", "Git", "ChatGpt"];
+    const keywordList1 = [
+      "- Collaborate with web designers & backend developers",
+      "- Kakao Talk implements Google SSO",
+      "- Image Resizing Implementation",
+      "- 1:1 Live Chat Implementation",
+    ];
+    const keywordList2 = [
+      "- Pursuing the development of responsive web pages",
+      "- Development of services by real users",
+      "- Validation using a regular expression",
+      "- Convert the entered address to latitude and longitude coordinates",
+    ];
 
     const interval = setInterval(() => {
       if (showKeywords1.length < keywordList1.length) {
@@ -73,7 +83,7 @@ const About: React.FC = () => {
               )}
             >
               <Slide>
-                <LargeTitle>Myself & I</LargeTitle>
+                <LargeTitle color="#ff941b">Myself & I</LargeTitle>
                 <SlideContent>
                   <h2>About me</h2>
                   <p>
@@ -110,26 +120,30 @@ const About: React.FC = () => {
               </Slide>
             </Carousel>
           </CarouselWrapper>
-          <Keywords>
-            <KeywordColumn>
-              {keywordTransitions1(
-                (style: CSSProperties, keyword: string, index: number) => (
-                  <animated.div style={style} key={keyword}>
-                    <Keyword>{keyword}</Keyword>
-                  </animated.div>
-                )
-              )}
-            </KeywordColumn>
-            <KeywordColumn>
-              {keywordTransitions2(
-                (style: CSSProperties, keyword: string, index: number) => (
-                  <animated.div style={style} key={keyword}>
-                    <Keyword>{keyword}</Keyword>
-                  </animated.div>
-                )
-              )}
-            </KeywordColumn>
-          </Keywords>
+          <ExperienceWrapper>
+            <LargeTitle color="#fbfd8e">My experience</LargeTitle>
+
+            <Keywords>
+              <KeywordColumn>
+                {keywordTransitions1(
+                  (style: CSSProperties, keyword: string, index: number) => (
+                    <animated.div style={style} key={keyword}>
+                      <Keyword>{keyword}</Keyword>
+                    </animated.div>
+                  )
+                )}
+              </KeywordColumn>
+              <KeywordColumn>
+                {keywordTransitions2(
+                  (style: CSSProperties, keyword: string, index: number) => (
+                    <animated.div style={style} key={keyword}>
+                      <Keyword>{keyword}</Keyword>
+                    </animated.div>
+                  )
+                )}
+              </KeywordColumn>
+            </Keywords>
+          </ExperienceWrapper>
         </ContentWrapper>
       </AboutWrapper>
     </>
@@ -137,7 +151,11 @@ const About: React.FC = () => {
 };
 
 export default About;
-
+const ExperienceWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center; // 추가된 부분
+`;
 const Slide = styled.div`
   display: flex;
   flex-direction: column;
@@ -183,27 +201,6 @@ const AboutWrapper = styled.div`
   align-items: center;
   height: 100vh;
   background-color: #1d1d1d; // 배경색 변경
-  margin-left: -10%;
-`;
-
-const ContentWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
-  max-width: 600px;
-  height: 100vh;
-`;
-
-const CarouselWrapper = styled.div`
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 80%; // 높이를 조절
-  margin-right: 60px; // 오른쪽 여백 조절
-  min-width: 500px;
 `;
 
 const SlideContent = styled.div`
@@ -220,16 +217,6 @@ const SlideContent = styled.div`
     line-height: 1.5;
   }
 `;
-const Keywords = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-top: 60px; // 상단 여백 조절
-  margin-bottom: 60px; // 하단 여백 조절
-  margin-left: 60px;
-  height: 200px; // 높이 조절
-`;
 
 const slideIn = keyframes`
   0% {
@@ -241,23 +228,56 @@ const slideIn = keyframes`
     transform: translateY(0);
   }
 `;
+const Keywords = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start; // 변경된 부분
+  margin-top: 60px; // 상단 여백 조절
+  margin-bottom: 60px; // 하단 여백 조절
+  margin-left: 60px;
+  width: 100%; // 수정된 부분
+  height: 200px; // 높이 조절
+`;
 
 const Keyword = styled.span`
-  font-size: 34px; // 글자 크기 변경
+  width: 800px;
+
+  font-size: 15px;
   font-weight: bold;
-  margin: 30px 0; // 상하 여백 조절
+  margin: 50px 0; // 상하 여백 조절
   color: #ffffff;
   animation: ${slideIn} 1s ease-in-out forwards;
   opacity: 0;
-  line-height: 2; // 줄 간격 조절
+  line-height: 2;
+`;
+
+const ContentWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px; // max-width 값을 늘립니다.
+  height: 100vh;
+`;
+
+const CarouselWrapper = styled.div`
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80%;
+  margin-bottom: 60px;
+  min-width: 600px; // min-width 값을 늘립니다.
 `;
 
 const KeywordColumn = styled.div`
   display: flex;
   flex-direction: column;
-  margin-right: 100px; // 오른쪽 마진 추가
+  margin-right: 200px; // margin-right 값을 늘립니다.
 
   &:last-child {
-    margin-right: 0; // 마지막 컬럼은 오른쪽 마진 제거
+    margin-right: 0;
   }
 `;
