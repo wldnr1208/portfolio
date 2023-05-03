@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import ParallaxTilt from "react-parallax-tilt";
 import BubbleBackground from "../components/bubbleBackground";
 import styled, { keyframes } from "styled-components";
 import backgroundImg from "../feat/background.jpg";
+import renderText from "../customhook/renderText";
 
 const Home = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -18,49 +18,6 @@ const Home = () => {
       window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
-
-  const renderText = (text: string) => {
-    return text.split("").map((char, index) => {
-      const rotation = Math.random() * 30 - 15; // -15 ~ 15도 회전
-      const scale = 1 + Math.random() * 0.2; // 1 ~ 1.2 배 크기
-      const [hue, setHue] = useState(Math.random() * 360); // 0 ~ 360도 색상
-
-      const changeColor = () => {
-        setTimeout(() => {
-          setHue(Math.random() * 360);
-          changeColor();
-        }, 2000);
-      };
-
-      useEffect(() => {
-        changeColor();
-      }, []);
-
-      const handleMouseEnter = () => {
-        setHue(Math.random() * 360);
-      };
-
-      return (
-        <ParallaxTilt
-          key={index}
-          tiltMaxAngleX={15}
-          tiltMaxAngleY={15}
-          scale={scale}
-        >
-          <AnimatedChar
-            style={{
-              transform: `rotate(${rotation}deg)`,
-              color: `hsl(${hue}, 80%, 60%)`,
-              transition: "color 2s",
-            }}
-            onMouseEnter={handleMouseEnter}
-          >
-            {char === " " ? "\u00A0" : char}
-          </AnimatedChar>
-        </ParallaxTilt>
-      );
-    });
-  };
 
   return (
     <>
@@ -115,18 +72,4 @@ const Position = styled.h3`
 const TextWrapper = styled.div`
   text-align: center;
   margin-right: 40%; // 원하는 값으로 변경하세요 (예: 50px, 100px 등)
-`;
-const bounce = keyframes`
-  0%, 100% {
-    transform: translateY(-10%);
-  }
-
-  50% {
-    transform: translateY(10%);
-  }
-`;
-
-const AnimatedChar = styled.span`
-  display: inline-block;
-  animation: ${bounce} 2s infinite ease-in-out;
 `;
