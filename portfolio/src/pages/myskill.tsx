@@ -1,6 +1,7 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import LargeTitle from "../components/LargeTitle";
+import { Element } from "react-scroll";
 
 const rotation = keyframes`
   0% {

@@ -36,7 +36,7 @@ const NavWrapper = styled.nav`
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 1001; // z-index 값을 1001로 변경
+  z-index: 1001;
 `;
 const NavList = styled.ul`
   list-style: none;
@@ -45,9 +45,9 @@ const NavList = styled.ul`
   display: flex;
   flex-direction: column;
   width: 100%;
-  align-items: center; // 가로 중앙 정렬 추가
-  justify-content: center; // 세로 중앙 정렬 추가
-  height: 100%; // 컴포넌트의 높이를 100%로 설정
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 `;
 const NavItem = styled.li<{ isHome?: boolean }>`
   width: 100%;
