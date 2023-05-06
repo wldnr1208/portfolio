@@ -24,7 +24,13 @@ export default function Contact() {
               <Name>Name: Jung Woo Lee</Name>
               <Country>Country: South Korea</Country>
               <Email>Email: jw1208159@gmail.com</Email>
-              <GitHub>GitHub: https://github.com/wldnr1208</GitHub>
+              <GitHub
+                href="https://github.com/wldnr1208"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub: https://github.com/wldnr1208
+              </GitHub>
             </Letter>
           )}
         </Envelope>
@@ -103,12 +109,15 @@ const Email = styled.p`
   font-size: 1rem;
   margin-bottom: 0.5rem;
 `;
-
-const GitHub = styled.p`
+const GitHub = styled.a`
   font-size: 1rem;
-  margin-bottom: 0.5rem;
+  color: inherit;
+  text-decoration: none;
+  margin-top: 1rem;
+  &:hover {
+    color: #30d6ec;
+  }
 `;
-
 const InstructionText = styled.span`
   font-size: 1rem;
   font-family: "Courier New", Courier, monospace;

@@ -45,7 +45,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => (
     <Image src={project.imageUrl} alt={project.title} />
     <Title>{project.title}</Title>
     <Description>{project.description}</Description>
-    <a href={project.visit}>visit - twogaether</a>
+    <a href={project.visit}>twogaether</a>
     <Technologies>
       {project.technologies.map((technology) => (
         <Technology key={technology}>{technology}</Technology>
