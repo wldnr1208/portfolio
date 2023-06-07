@@ -29,7 +29,7 @@ const projects: Project[] = [
   },
   {
     title: "clonetube",
-    description: "youtube clonecoding",
+    description: "Youtube clonecoding",
     technologies: [
       "React",
       "React-Query",
@@ -51,7 +51,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => (
     <Image src={project.imageUrl} alt={project.title} />
     <Title>{project.title}</Title>
     <Description>{project.description}</Description>
-    <a href={project.visit}>twogaether</a>
+    <a href={project.visit}>{project.title}</a>
     <Technologies>
       {project.technologies.map((technology) => (
         <Technology key={technology}>{technology}</Technology>
