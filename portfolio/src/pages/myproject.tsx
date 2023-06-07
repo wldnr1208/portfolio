@@ -27,13 +27,19 @@ const projects: Project[] = [
     imageUrl: "togather.png",
     visit: "https://twogaether.site/",
   },
-  /*   {
-    title: "Project 2",
-    description: "Description of Project 2",
-    technologies: ["Node.js", "Express", "MongoDB"],
-    imageUrl: "https://via.placeholder.com/150",
-  }, */
-  // ...add more projects
+  {
+    title: "clonetube",
+    description: "youtube clonecoding",
+    technologies: [
+      "React",
+      "React-Query",
+      "tailwind-CSS",
+      "Axios",
+      "Youtube API",
+    ],
+    imageUrl: "clonecoding.PNG",
+    visit: "https://elegant-naiad-94d690.netlify.app/",
+  },
 ];
 
 type ProjectCardProps = {
