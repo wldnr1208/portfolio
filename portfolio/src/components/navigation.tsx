@@ -10,7 +10,7 @@ const Navigation = () => {
           <NavLink href="/">Home</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink href="/about">About</NavLink>
+          <NavLink href="/about">Experience</NavLink>
         </NavItem>
         <NavItem>
           <NavLink href="/myskill">My Skills</NavLink>
